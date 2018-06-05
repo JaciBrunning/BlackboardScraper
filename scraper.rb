@@ -42,6 +42,7 @@ CIO.with do
     end
 end
 
+# Download Assets
 CIO.puts
 CIO.puts "Downloading Assets..."
 CIO.with do 
@@ -52,9 +53,3 @@ CIO.with do
         asset.download BASEPATH
     end
 end
-
-# puts
-# unit.collectAssets.values.each do |asset|
-#     puts "Found Asset -> #{asset.name}"
-#     asset.download BASEPATH
-# end
