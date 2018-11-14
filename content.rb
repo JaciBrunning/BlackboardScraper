@@ -36,8 +36,8 @@ class BBContent
             contentid = listing['href'].scan(/\&content_id=([-_0-9]+)/).last.first
             unless contentid == @id || @@contentids.include?(contentid)
                 @contents[contentid] = BBContent.new(unit, contentid, listing.text, "#{path}/#{id}_#{friendly_filename(name)}")
-                @contents[contentid].crawl
                 @@contentids << contentid
+                @contents[contentid].crawl
             else
                 CIO.puts "[ content not added (recursive) ]"
             end
